@@ -21,10 +21,83 @@ body {
         TYPOGRAPHY
         ================*/
 
+.logo {
+        background-color: var(--yellow);
+        
+}
 
+.nav-link {
+        text-decoration: none;
+        color: var(--white);
+        font-weight: 700;
+        font-size: .875rem;
+}
 
+.current-page {
+        border-bottom: 2px solid var(--yellow);
+}
 
+h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--white);
+}
 
+h1 span {
+        color: var(--yellow);
+}
+
+.h1-p {
+        color: var(--white);
+        font-size: 1.125rem;
+}
+
+.btn {
+        display: inline-block;
+        font-size: .875rem;
+        font-weight: 700;
+        padding: .75em 1.5em;
+        text-align: center;
+        background: var(--yellow);
+        border: none;
+}
+
+.btn:hover,
+.btn:focus {
+        color: blue;
+        cursor: pointer;
+        padding: .8em 1.7em;
+}
+
+h2 {
+        font-size: 1.125rem;
+}
+
+.main-h2-p {
+        color: var(--darkgrey);
+}
+
+.socials-list-link {
+        color: black;
+        font-size: 1.6875rem;
+}
+
+.socials-list-link:hover,
+.socials-list-link:focus {
+        color: blue;
+}
+
+.main-footer-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        opacity: .37;
+}
+.main-footer-slogan {
+        opacity: .37;
+}
+.copyright {
+        opacity: .16;
+}
 
 
 
@@ -33,6 +106,64 @@ body {
         LAYOUT
         ================*/
 
+.main-header {
+        background: var(--black);
+        background-image: url(../img/hero-bg.jpg);
+        background-position: center;
+        background-size:cover;
+        display: grid;
+        grid-template-areas: 
+                "img . nav"
+                "h1  h1    ."
+                "p    p     ."
+                "btn  .   .";
+ }
+
+ .logo {
+        grid-area: img;
+ }
+
+ .nav-bar {
+        grid-area: nav;
+ }
+
+ h1 {
+        grid-area: h1;
+        margin-top: 1em;
+ }
+
+ .h1-p {
+        grid-area: p;
+        margin: 1em auto;
+ }
+
+ .btn {
+        grid-area: btn;
+        margin: 1em;
+ }
+
+ .main-page-info-container {
+        text-align: center;
+        padding: 2em;
+ }
+
+  .main-footer {
+        background: var(--lightgrey);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+ }
+
+ .socials-list {
+        display: flex;
+}
+
+.socials-list-item {
+        list-style: none;
+        margin-left: .5em;
+}
 
 
 
