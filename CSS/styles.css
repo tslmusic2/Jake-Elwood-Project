@@ -1,0 +1,43 @@
+* {
+        margin: 0;
+        padding: 0;
+}
+
+:root {
+        --white: #FFFFFF;
+        --yellow: #FFE600;
+        --lightgrey: #EBEBEB;
+        --darkgrey: #404040;
+        --black: #000000;
+
+}
+
+body {
+        font-family: "Montserrat", sans-serif; /*font weights 400, 700*/
+}
+
+
+/* =================
+        TYPOGRAPHY
+        ================*/
+
+
+
+
+
+
+
+
+
+/* =================
+        LAYOUT
+        ================*/
+
+
+
+
+
+
+/* =================
+        MEDIA QUERIES
+        ================*/
