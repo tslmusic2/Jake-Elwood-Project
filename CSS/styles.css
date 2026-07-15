@@ -1,6 +1,5 @@
 * {
-        margin: 0;
-        padding: 0;
+        box-sizing: border-box;
 }
 
 :root {
@@ -14,6 +13,8 @@
 
 body {
         font-family: "Montserrat", sans-serif; /*font weights 400, 700*/
+        margin: 0;
+        padding: 0;
 }
 
 
@@ -21,9 +22,9 @@ body {
         TYPOGRAPHY
         ================*/
 
-.logo {
+.home-link {
         background-color: var(--yellow);
-        
+        align-self: flex-end;
 }
 
 .nav-link {
@@ -31,6 +32,10 @@ body {
         color: var(--white);
         font-weight: 700;
         font-size: .875rem;
+}
+
+.nav-list {
+        list-style: none;
 }
 
 .current-page {
@@ -53,13 +58,13 @@ h1 span {
 }
 
 .btn {
-        display: inline-block;
         font-size: .875rem;
         font-weight: 700;
         padding: .75em 1.5em;
         text-align: center;
         background: var(--yellow);
-        border: none;
+        justify-self: start;
+        
 }
 
 .btn:hover,
@@ -69,8 +74,15 @@ h1 span {
         padding: .8em 1.7em;
 }
 
+h2,
+.main-h2-p {
+        font-weight: 700;
+}
+
 h2 {
         font-size: 1.125rem;
+        margin-bottom: 1em;
+        border-bottom: 2px solid var(--yellow);
 }
 
 .main-h2-p {
@@ -88,12 +100,15 @@ h2 {
 }
 
 .main-footer-logo {
-        font-size: 2rem;
+        font-size: 1.75rem;
         font-weight: 700;
-        opacity: .37;
+        opacity: .27;
+        margin-bottom: .25em;
 }
 .main-footer-slogan {
+        font-weight: 700;
         opacity: .37;
+        margin-bottom: 4em;
 }
 .copyright {
         opacity: .16;
@@ -107,68 +122,122 @@ h2 {
         ================*/
 
 .main-header {
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--black);
+}
+
+.hero-section {
+}
+
+.hero {
         background: var(--black);
         background-image: url(../img/hero-bg.jpg);
         background-position: center;
         background-size:cover;
         display: grid;
-        grid-template-areas: 
-                "img . nav"
-                "h1  h1    ."
-                "p    p     ."
-                "btn  .   .";
- }
-
- .logo {
-        grid-area: img;
- }
-
- .nav-bar {
-        grid-area: nav;
+        grid-template-columns: minmax(0px, 1fr) 3fr  minmax(0px, 1fr);
  }
 
  h1 {
-        grid-area: h1;
-        margin-top: 1em;
+        grid-column: 2 / 3;
  }
 
  .h1-p {
-        grid-area: p;
-        margin: 1em auto;
+        grid-column: 2 / 3;
  }
 
  .btn {
-        grid-area: btn;
-        margin: 1em;
+        grid-column: 2 / 3;
+        margin-bottom: 3em;
+ }
+
+
+ .main-page-info {
+        display: grid;
+        grid-template-columns: minmax(0px, 1fr) 3fr  minmax(0px, 1fr);
+        text-align: center;
  }
 
  .main-page-info-container {
-        text-align: center;
-        padding: 2em;
+        grid-column: 2 / 3;
+        line-height: 1.6;
  }
 
   .main-footer {
         background: var(--lightgrey);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: minmax(0px, 1fr) 3fr  minmax(0px, 1fr);
         text-align: center;
  }
 
+ .footer-info {
+        grid-column: 2 / 3;
+ }
+
  .socials-list {
+        grid-column: 2 / 3;
         display: flex;
-}
-
-.socials-list-item {
+        gap: 1em;
+        justify-content: center;
         list-style: none;
-        margin-left: .5em;
+        padding: 0;
+        order: -1;
 }
-
-
 
 
 
 /* =================
         MEDIA QUERIES
         ================*/
+
+@media (min-width: 45em) {
+        .main-header{
+                justify-content: start;
+                gap: 3em;
+        }
+
+        .nav-list {
+                display: flex;
+                gap: 1em;
+        }
+
+         .main-page-info {
+        grid-template-columns: minmax(0px, 1fr) 2fr 2fr 2fr minmax(0px, 1fr);
+        text-align: center;
+        }
+
+        .info-container-aboutus {
+                grid-column: 2 / 3;
+        }
+        
+        .info-container-ourskills {
+                grid-column: 3 / 4;
+        }
+     
+        .info-container-contact {
+                grid-column: 4 / 5;
+        }
+
+        .main-page-info-container {
+                margin: 1em;
+        }
+
+
+
+        .main-footer {
+                grid-template-columns: minmax(0px, 1fr) 3fr 1fr  minmax(0px, 1fr);
+                        text-align: left;
+        }
+        
+         .footer-info {
+                grid-column: 2 / 3;
+                justify-self: start;
+        }
+
+        .socials-list {
+                grid-column: 3 / 4;
+                align-self: flex-end;
+                justify-self: end;
+        }
+}
